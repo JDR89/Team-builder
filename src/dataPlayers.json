@@ -1,0 +1,174 @@
+{
+    "players": [
+      {
+        "id": "1",
+        "name": "Joaco",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "2",
+        "name": "Marquitos",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "3",
+        "name": "Alfred",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "4",
+        "name": "Juan kunfu",
+        "position": "med",
+        "selected": false
+      },
+
+      {
+        "id": "6",
+        "name": "Martin S",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "7",
+        "name": "Wolter",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "9",
+        "name": "Javi",
+        "position": "del",
+        "selected": false
+      },
+      {
+        "id": "10",
+        "name": "Eze",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "11",
+        "name": "Bolt",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "12",
+        "name": "Chato",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "13",
+        "name": "Dani",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "14",
+        "name": "Nico",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "15",
+        "name": "Juan G",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "16",
+        "name": "Tonga",
+        "position": "del",
+        "selected": false
+      },
+      {
+        "id": "18",
+        "name": "Flaco",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "19",
+        "name": "Bacha",
+        "position": "del",
+        "selected": false
+      },
+      {
+        "id": "20",
+        "name": "Marcos Luna",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "21",
+        "name": "Minion",
+        "position": "del",
+        "selected": false
+      },
+      {
+        "id": "22",
+        "name": "Nahuel",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "23",
+        "name": "Adrián",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "24",
+        "name": "Danilo",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "25",
+        "name": "Agus Mandibula",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "26",
+        "name": "Martin",
+        "position": "del",
+        "selected": false
+      },
+      {
+        "id": "27",
+        "name": "Rifle",
+        "position": "del",
+        "selected": false
+      },
+      {
+        "id": "28",
+        "name": "Gabi",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "29",
+        "name": "Mati viking",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "30",
+        "name": "Mati",
+        "position": "med",
+        "selected": false
+      },
+      {
+        "id": "31",
+        "name": "Peguen",
+        "position": "med",
+        "selected": false
+      }
+    ]
+  }
+  
