@@ -16,7 +16,7 @@ export const GridPlayers = () => {
 
   const filterPlayers = (players: any) => {
     if(inputValue==="")return players
-    return players.filter((player: any) => player.name.toLowerCase().includes(inputValue))
+    return players.filter((player: any) => player.name.toLowerCase().includes(inputValue.toLocaleLowerCase()))
   };
 
   const filteredPlayers = filterPlayers(players)
