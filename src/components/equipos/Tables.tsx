@@ -1,13 +1,16 @@
 "use client"
 import { usePlayerContext } from "@/context/PlayerContext";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-interface Player{
+
+
+interface Player {
   id:string
   name:string
   position:string
   selected:boolean
-
 }
 
 
@@ -22,6 +25,7 @@ export const Tables = () => {
   const [team2, setTeam2] = useState<Player[]>([])
 
 
+  // FN PARA DIVIDIR EQUIPOS
   const positionDivider=(players:any)=>{
     const defensores = players.filter((e:Player) => e.position === "def");
     const medios = players.filter((e:Player) => e.position === "med");
@@ -138,8 +142,49 @@ export const Tables = () => {
   
 
   
+ 
+  // FN PARA COPIAR A PORTAPAPELES
+
+  const copylink = (e:any) => {
+    const team1Copy = team1.map((e:Player) => e.name)
+    const team2Copy = team2.map((e:Player) => e.name)
+
+    const cadenaCopy = "--Team 1--"+"\n" + team1Copy.join("\n")+"\n" +"\n" + "--Team 2--"+"\n" + team2Copy.join("\n")
+      navigator.clipboard.writeText(cadenaCopy);
+      
+      
+  }
+
+  const notify = () => toast("Copiado!");
+  
   return (
-    <div className="container mx-auto  flex flex-col lg:flex-row mt-10 gap-10 ">
+    <>
+    
+    <div className="flex justify-center mb-2">
+    <button
+    onClick={copylink}
+    className="btn btn-accent mt-10 flex justify-center mb-5" >
+      
+      <span onClick={notify}>Copiar</span>
+      
+    </button>
+    <ToastContainer
+      position="top-center"
+      autoClose={1000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      
+      />
+    </div>
+
+    <div className="container mx-auto  flex flex-col lg:flex-row mt-2 gap-10 ">
+      
       {/* PRIMERA COLUMNA */}
       <div className="lg:w-1/2 ">
         <table className="min-w-full bg-primary text-primary-content border-2 border-success">
@@ -182,7 +227,8 @@ export const Tables = () => {
       </div>
       {/* FIN SEGUNDA COLUMNA */}
 
-     
+    
     </div>
+    </>
   );
 };

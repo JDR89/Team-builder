@@ -35,7 +35,7 @@ export const GridPlayers = () => {
 
         <button
         onClick={() => setInputValue("")}
-         className="btn btn-ghost border-accent hover:border-accent">res</button>
+         className="btn btn-ghost border-accent hover:border-accent ml-1 text-xl">X</button>
       </div>
 
       <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-5">
