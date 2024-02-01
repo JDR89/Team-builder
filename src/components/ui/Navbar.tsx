@@ -5,10 +5,10 @@ export const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100">
-      <div className="navbar-start">
-        <div className="dropdown">
+      {/* <div className="navbar-start">
+        <div className="dropdown"> */}
           {/* BOTON HAMBURGUESA */}
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          {/* <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -33,10 +33,10 @@ export const Navbar = () => {
               <Link href={"/login"}>Login</Link>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* FIN BOTON HAMBURGUESA */}
-      </div>
+      {/* </div> */}
 
       {/* MENU RESPONSIVE PARA CUANDO AGREGUE PAGINAS */}
 
@@ -52,12 +52,12 @@ export const Navbar = () => {
         </ul>
       </div> */}
 
-      <div className="navbar-end hidden md:flex sm:justify-end">
+      {/* <div className="navbar-end hidden md:flex sm:justify-end">
       
         <Link href={"/login"} className="btn">
           Log
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
