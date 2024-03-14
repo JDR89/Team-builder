@@ -116,9 +116,29 @@ export const Tables = () => {
     return true;
   };
 
-  // ACTUALIZO LA VARIABLE PLAYERS SI NECESITO
+  // FN PARA MEZCLAR JUGADORES AL AZAR
+  function shuffle(array:[]) {
+    let currentIndex = array.length;
+    let temporaryValue, randomIndex;
+  
+    // Mientras queden elementos a mezclar...
+    while (currentIndex !== 0) {
+      // Seleccionar un elemento sin mezclar...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // Intercambiar el elemento actual con el seleccionado al azar
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
+
+  // ACTUALIZO LA VARIABLE PLAYERS SI NECESITO Y MEZCLO AL AZAR LOS EQUIPOS
   useEffect(() => {
-    setPlayers(selectedPlayers as any[]);
+    setPlayers(shuffle(selectedPlayers));
   }, [selectedPlayers]);
 
   // ACTIVO FN DE DIVISION Y ACTUALIZO
@@ -146,6 +166,7 @@ export const Tables = () => {
 
   const notify = () => toast("Copiado!");
 
+  //Selecciono los jugadores a cambiar
   function onSelectPlayerToChangeTeamUno(id: any) {
     const findIndex = team1.findIndex((player) => player.id === id);
     const playerToChange = team1[findIndex];
@@ -175,6 +196,7 @@ export const Tables = () => {
     router.refresh();
   }
 
+  //FN Para realizar el cambio de equipo
   function onHandleTeamChangeTeamUno() {
     const newTeam2 = team1.filter((player) => player.onHandleTeam);
     const updatedNewTeam2 = newTeam2.map((player) => ({
@@ -186,6 +208,7 @@ export const Tables = () => {
     setTeam1((prevTeam1) => prevTeam1.filter((player) => !player.onHandleTeam));
   }
 
+  //FN Para realizar el cambio de equipo
   function onHandleTeamChangeTeamDos() {
     const newTeam1 = team2.filter((player) => player.onHandleTeam);
     const updatedNewTeam1 = newTeam1.map((player) => ({
@@ -202,6 +225,8 @@ export const Tables = () => {
     onHandleTeamChangeTeamDos();
   };
 
+
+  
   return (
     <div className="mb-8">
       <div className="flex justify-center mb-3">
