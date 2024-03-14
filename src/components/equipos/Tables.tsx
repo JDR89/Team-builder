@@ -1,5 +1,6 @@
 "use client"
 import { usePlayerContext } from "@/context/PlayerContext";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,10 +12,14 @@ interface Player {
   name:string
   position:string
   selected:boolean
+  onHandleTeam?:boolean
 }
 
 
+
+
 export const Tables = () => {
+  const router = useRouter()
 
   const{selectedPlayers}:any=usePlayerContext()
 
@@ -156,16 +161,81 @@ export const Tables = () => {
   }
 
   const notify = () => toast("Copiado!");
+
+  function onSelectPlayerToChangeTeamUno(id:any) {
+    const findIndex = team1.findIndex((player) => player.id === id);
+    const playerToChange = team1[findIndex];
+
+    const selected = {
+      ...playerToChange,
+      onHandleTeam: !playerToChange.onHandleTeam,
+    }
+
+    team1[findIndex] = selected;
+
+    router.refresh()
+    
+   
+  }
+
+  //Selecciono los jugadores a cambiar
+  function onSelectPlayerToChangeTeamDos(id:any) {
+    const findIndex = team2.findIndex((player) => player.id === id);
+    const playerToChange = team2[findIndex];
+
+    const selected = {
+      ...playerToChange,
+      onHandleTeam: !playerToChange.onHandleTeam,
+    }
+
+    team2[findIndex] = selected;
+
+    router.refresh()
+    
+   
+  }
+
+  function onHandleTeamChangeTeamUno() {
+    const newTeam2 = team1.filter((player) => player.onHandleTeam);
+    const updatedNewTeam2 = newTeam2.map((player) => ({ ...player, onHandleTeam: false }));
+
+    setTeam2((prevTeam2) => [...prevTeam2, ...updatedNewTeam2 ]);
+    setTeam1((prevTeam1) => prevTeam1.filter((player) => !player.onHandleTeam));
+
+    
+  }
+
+  function onHandleTeamChangeTeamDos() {
+    const newTeam1 = team2.filter((player) => player.onHandleTeam);
+    const updatedNewTeam1 = newTeam1.map((player) => ({ ...player, onHandleTeam: false }));
+
+    setTeam1((prevTeam1) => [...prevTeam1, ...updatedNewTeam1]);
+    setTeam2((prevTeam2) => prevTeam2.filter((player) => !player.onHandleTeam));
+
+    
+  }
+
+  const transfer=()=>{
+    onHandleTeamChangeTeamUno()
+    onHandleTeamChangeTeamDos()
+
+  }
   
   return (
-    <>
+    <div className="mb-8">
     
-    <div className="flex justify-center mb-2">
+    <div className="flex justify-center mb-3">
+
+    <button
+    onClick={transfer}
+    className="btn btn-primary mt-10 flex justify-center mb-5 mr-5" > {"<< >>"} </button>
+
     <button
     onClick={copylink}
-    className="btn btn-accent mt-10 flex justify-center mb-5" >
+    className="btn btn-accent  mt-10 flex justify-center mb-5" >
       
       <span onClick={notify}>Copiar</span>
+     
       
     </button>
     <ToastContainer
@@ -181,6 +251,9 @@ export const Tables = () => {
       theme="dark"
       
       />
+
+
+      
     </div>
 
     <div className="container mx-auto  flex flex-col lg:flex-row mt-2 gap-10 ">
@@ -195,8 +268,14 @@ export const Tables = () => {
             </tr>
           </thead>
           <tbody className="text-center">
-            {team1.map((jugador:any) => (
-              <tr key={jugador.id}>
+            {team1.sort((a, b) => {
+      const order = ['def', 'med', 'del'];
+      return order.indexOf(a.position) - order.indexOf(b.position);
+    }).map((jugador:any) => (
+              <tr
+              className={jugador.onHandleTeam ? "border-2 bg-accent " : "bg-primary text-primary-content"}
+              onClick={() => onSelectPlayerToChangeTeamUno(jugador.id)}
+              key={jugador.id}>
                 <td className="py-2 px-4 border-b border-success uppercase ">{jugador.name}</td>
                 <td className="py-2 px-4 border-b border-success uppercase">{jugador.position}</td>
               </tr>
@@ -216,8 +295,14 @@ export const Tables = () => {
             </tr>
           </thead>
           <tbody className="text-center">
-            {team2.map((jugador:any) => (
-              <tr key={jugador.id}>
+            {team2.sort((a, b) => {
+      const order = ['def', 'med', 'del'];
+      return order.indexOf(a.position) - order.indexOf(b.position);
+    }).map((jugador:any) => (
+              <tr
+              className={jugador.onHandleTeam ? "border-2  bg-success text-black " : "bg-primary text-primary-content"}
+              onClick={() => onSelectPlayerToChangeTeamDos(jugador.id)}
+              key={jugador.id}>
                 <td className="py-2 px-4 border-b border-accent uppercase">{jugador.name}</td>
                 <td className="py-2 px-4 border-b border-accent uppercase">{jugador.position}</td>
               </tr>
@@ -229,6 +314,6 @@ export const Tables = () => {
 
     
     </div>
-    </>
+    </div>
   );
 };

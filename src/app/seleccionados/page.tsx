@@ -1,5 +1,6 @@
 
 import { Tables } from "@/components/equipos/Tables";
+import { LineSeparator } from "@/components/ui/LineSeparator";
 import { Title } from "@/components/ui/Title";
 
 
@@ -18,6 +19,7 @@ export default function SeleccionadosPage() {
         <Tables />
       </div>
 
+      <LineSeparator name={"............."} className="mt-4" />
     </div>
   );
 }
