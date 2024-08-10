@@ -127,7 +127,7 @@
       },
       {
         "id": "29",
-        "name": "viking",
+        "name": "Viking",
         "position": "med",
         "selected": false
       },
@@ -141,6 +141,12 @@
         "id": "31",
         "name": "Peguem",
         "position": "med",
+        "selected": false
+      },
+      {
+        "id": "32",
+        "name": "Flacao",
+        "position": "def",
         "selected": false
       }
     ]
