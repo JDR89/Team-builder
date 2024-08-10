@@ -136,6 +136,7 @@ export const Tables = () => {
     return array;
   }
 
+
   // ACTUALIZO LA VARIABLE PLAYERS SI NECESITO Y MEZCLO AL AZAR LOS EQUIPOS
   useEffect(() => {
     setPlayers(shuffle(selectedPlayers));
@@ -145,6 +146,9 @@ export const Tables = () => {
   useEffect(() => {
     positionDivider(players);
   }, [players]);
+
+ 
+
 
   // FN PARA COPIAR A PORTAPAPELES
 
@@ -335,6 +339,7 @@ export const Tables = () => {
         </div>
         {/* FIN SEGUNDA COLUMNA */}
       </div>
+     
     </div>
   );
 };

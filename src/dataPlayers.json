@@ -8,7 +8,7 @@
       },
       {
         "id": "2",
-        "name": "Marquitos",
+        "name": "Marcos",
         "position": "def",
         "selected": false
       },
@@ -20,7 +20,7 @@
       },
       {
         "id": "4",
-        "name": "Juan kunfu",
+        "name": "Juan Fu",
         "position": "med",
         "selected": false
       },
@@ -67,12 +67,7 @@
         "position": "med",
         "selected": false
       },
-      {
-        "id": "14",
-        "name": "Nico",
-        "position": "med",
-        "selected": false
-      },
+    
       {
         "id": "15",
         "name": "Juan G",
@@ -97,18 +92,7 @@
         "position": "med",
         "selected": false
       },
-      {
-        "id": "20",
-        "name": "Marcos Luna",
-        "position": "med",
-        "selected": false
-      },
-      {
-        "id": "21",
-        "name": "Minion",
-        "position": "del",
-        "selected": false
-      },
+    
       {
         "id": "22",
         "name": "Nahuel",
@@ -121,24 +105,14 @@
         "position": "def",
         "selected": false
       },
-      {
-        "id": "24",
-        "name": "Danilo",
-        "position": "def",
-        "selected": false
-      },
+   
       {
         "id": "25",
         "name": "Agus",
         "position": "med",
         "selected": false
       },
-      {
-        "id": "26",
-        "name": "Martin",
-        "position": "del",
-        "selected": false
-      },
+   
       {
         "id": "27",
         "name": "Rifle",
@@ -153,7 +127,7 @@
       },
       {
         "id": "29",
-        "name": "Mati viking",
+        "name": "viking",
         "position": "med",
         "selected": false
       },

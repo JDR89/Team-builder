@@ -79,3 +79,17 @@ export const BotForm = () => {
     </>
   );
 };
+
+// CALIDAD BOT
+// {
+//   "id": "20",
+//   "name": "Marcos Luna",
+//   "position": "med",
+//   "selected": false
+// },
+// {
+//   "id": "21",
+//   "name": "Minion",
+//   "position": "del",
+//   "selected": false
+// },
