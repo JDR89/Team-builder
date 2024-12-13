@@ -55,12 +55,7 @@
         "position": "med",
         "selected": false
       },
-      {
-        "id": "12",
-        "name": "Chato",
-        "position": "def",
-        "selected": false
-      },
+    
       {
         "id": "13",
         "name": "Dani",
@@ -113,12 +108,7 @@
         "selected": false
       },
    
-      {
-        "id": "27",
-        "name": "Rifle",
-        "position": "del",
-        "selected": false
-      },
+     
       {
         "id": "28",
         "name": "Gabi",
@@ -147,6 +137,18 @@
         "id": "32",
         "name": "Ivan",
         "position": "def",
+        "selected": false
+      },
+      {
+        "id": "33",
+        "name": "Choza",
+        "position": "def",
+        "selected": false
+      },
+      {
+        "id": "34",
+        "name": "Gonza",
+        "position": "del",
         "selected": false
       }
     ]
